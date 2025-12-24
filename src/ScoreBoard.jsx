@@ -1,4 +1,4 @@
-
+/* קומפוננטת הלוח ניקוד*/
 import React from 'react';
 
 function ScoreBoard({ scores }) {

@@ -1,6 +1,5 @@
+/* קומפוננטת האפליקציה*/
 import {useState} from "react";
-
-
 function FourInRow() {
     const [rows, setRows] = useState(6);
     const [columns, setColumns] = useState(7);

@@ -1,4 +1,4 @@
-
+/* קומפוננטת לוגיקת המשחק*/
 export const createEmptyBoard = (rows, cols) => {
     return Array(Number(cols)).fill(null).map(() => Array(Number(rows)).fill(null));
 };
@@ -47,7 +47,7 @@ export const countDiscs = (currentBoard) => {
 
 export const findWinningMove = (board, playerColor) => {
     for (let col = 0; col < board.length; col++) {
-        // יצירת עותק עמוק
+
         const tempBoard = board.map(column => [...column]);
         let rowToPlace = -1;
 

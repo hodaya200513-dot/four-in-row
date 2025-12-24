@@ -1,13 +1,10 @@
-/* App.css - עיצוב משודרג עם פינות מעוגלות */
 
-/* 1. ייבוא פונט יפה ומודרני (Rubik) */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
 
-/* הגדרות כלליות */
 body {
     margin: 0;
-    font-family: 'Rubik', sans-serif; /* שינוי לפונט עגול */
-    background-color: #f4f7f6; /* רקע טיפה יותר נעים מלבן בוהק */
+    font-family: 'Rubik', sans-serif;
+    background-color: #f4f7f6;
     color: #333;
 }
 
@@ -21,13 +18,12 @@ body {
     text-align: center;
 }
 
-/* 2. מסכים וכותרות */
 .welcome-screen {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* שינוי קטן כדי למנוע גלילה מיותרת */
+    min-height: 100vh;
     width: 100%;
     background-color: #f0f0f0;
 }
@@ -37,100 +33,94 @@ body {
     margin-bottom: 20px;
     margin-top: 0;
 
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* צבעים קצת יותר מודרניים */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* צל עדין יותר */
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
 .game-screen .main-title {
     margin-top: 100px;
 }
 
-/* 3. הלוח - עכשיו עם פינות מעוגלות */
 .board {
     display: flex;
     background-color: blue;
-    padding: 15px; /* קצת יותר ריווח */
+    padding: 15px;
     border: 5px solid navy;
-    border-radius: 30px; /* --- פינות מעוגלות ללוח --- */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* צל שנותן עומק */
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .column {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    /* אין צורך בפינות כאן כי זה שקוף */
 }
 
 .column:hover {
-    background-color: rgba(68, 68, 255, 0.3); /* רקע חצי שקוף בהובר */
-    border-radius: 15px; /* שגם ההובר יהיה עגול */
+    background-color: rgba(68, 68, 255, 0.3);
+    border-radius: 15px;
 }
 
 .cell {
     width: 50px;
     height: 50px;
     background-color: white;
-    border-radius: 50%; /* זה כבר היה עגול (חורים) */
+    border-radius: 50%;
     margin: 5px;
     border: 1px solid rgba(0,0,0,0.2);
     position: relative;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); /* צל פנימי לחור */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* 4. הדסקיות */
-/* --- הגדרת האנימציה (הנפילה) --- */
+
 @keyframes dropIn {
     0% {
-        transform: translateY(-600px); /* מתחיל גבוה מעל הלוח */
+        transform: translateY(-600px);
         opacity: 0;
     }
     60% {
-        transform: translateY(0); /* מגיע לתחתית */
+        transform: translateY(0);
     }
 
     100% {
-        transform: translateY(0); /* נחיתה סופית */
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
-/* --- עדכון הדסקיות כך שישתמשו באנימציה --- */
 .piece {
     width: 100%;
     height: 100%;
-    border-radius: 50%; /* עיגול מלא */
-    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.2), 2px 2px 5px rgba(0,0,0,0.3); /* אפקט תלת מימד קטן */
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.2), 2px 2px 5px rgba(0,0,0,0.3);
 
-    /* הוספת האנימציה: שם האנימציה, משך זמן (0.5 שניות), וסגנון תנועה */
     animation: dropIn 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 
 .piece.red {
-    background-color: #ff4757; /* אדום יפה יותר */
-    border: none; /* הורדתי את הגבול השחור למראה נקי */
-}
-
-.piece.yellow {
-    background-color: #f1c40f; /* צהוב יפה יותר */
+    background-color: #ff4757;
     border: none;
 }
 
-/* 5. כפתורים - עכשיו עגולים כמו גלולות */
+.piece.yellow {
+    background-color: #f1c40f;
+    border: none;
+}
+
 button {
     cursor: pointer;
     font-size: 1rem;
     padding: 12px 25px;
     margin: 10px;
-    border: none; /* בלי מסגרת שחורה */
+    border: none;
     background-color: #e0e0e0;
     color: #333;
 
-    border-radius: 50px; /* --- פינות מעוגלות לכפתורים --- */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* צל עדין */
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.2s, background-color 0.2s;
     font-family: 'Rubik', sans-serif;
     font-weight: bold;
@@ -138,24 +128,22 @@ button {
 
 button:hover {
     background-color: #d0d0d0;
-    transform: translateY(-2px); /* אפקט קפיצה קטן */
+    transform: translateY(-2px);
 }
 
-/* צבעי כפתורים */
 .btn-primary {
-    background-color: #2ecc71; /* ירוק */
+    background-color: #2ecc71;
     color: white;
 }
 .btn-warning {
-    background-color: #f39c12; /* כתום */
+    background-color: #f39c12;
     color: white;
 }
 .btn-hint {
-    background-color: #3498db; /* כחול */
+    background-color: #3498db;
     color: white;
 }
 
-/* 6. הסרגל העליון והניקוד */
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -166,7 +154,7 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9); /* לבן חצי שקוף */
+    background-color: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
@@ -184,7 +172,7 @@ button:hover {
     background-color: white;
     border: 1px solid #eee;
 
-    border-radius: 20px; /* --- פינות מעוגלות ללוח הניקוד --- */
+    border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
@@ -204,7 +192,6 @@ button:hover {
 .score-dot.red { background-color: #ff4757; }
 .score-dot.yellow { background-color: #f1c40f; }
 
-/* 7. מידע וטיימר */
 .game-info {
     margin-bottom: 20px;
     display: flex;
@@ -218,7 +205,7 @@ button:hover {
     padding: 8px 15px;
     font-weight: bold;
     background-color: white;
-    border-radius: 12px; /* --- פינות מעוגלות לטיימר --- */
+    border-radius: 12px;
 }
 
 .timer-box.danger {
@@ -226,7 +213,6 @@ button:hover {
     border-color: #e74c3c;
 }
 
-/* 8. פאנל הגדרות במסך הפתיחה */
 .settings-panel {
     border: none;
     padding: 0;
@@ -234,12 +220,11 @@ button:hover {
     background-color: transparent;
 }
 
-/* הכרטיסייה היפה שלך */
 .options-card {
     background-color: #ffffff;
 
-    border-radius: 20px; /* --- פינות מעוגלות לכרטיסייה --- */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* צל משודרג */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
     padding: 30px;
     max-width: 500px;
@@ -279,14 +264,12 @@ button:hover {
     top: -5px;
 }
 
-/* שדרוג האינפוטים (תיבות הקלט) */
 input {
     padding: 10px;
     border: 2px solid #ddd;
-    border-radius: 12px; /* --- פינות מעוגלות לאינפוטים --- */
+    border-radius: 12px;
     text-align: center;
     font-size: 1rem;
     font-family: 'Rubik', sans-serif;
     outline: none;
     transition: border-color 0.3s}
-/* --- התאמות למובייל (טלפונים) --- */

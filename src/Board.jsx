@@ -1,4 +1,4 @@
-
+/* קומפוננטת הלוח*/
 import React from 'react';
 
 function Board({ board, onColumnClick, winner }) {

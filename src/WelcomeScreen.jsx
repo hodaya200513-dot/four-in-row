@@ -1,4 +1,4 @@
-
+/* קומפוננטת התפריט*/
 import React from 'react';
 
 function WelcomeScreen({ onStart, rows, setRows, columns, setColumns }) {
